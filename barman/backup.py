@@ -411,9 +411,9 @@ class BackupManager(RemoteStatusMixin):
                     "failure %s (%s)" % (
                         self.executor.current_action, msg_lines[0]))
 
-            output.error("Backup failed %s.\nDETAILS: %s\n%s",
-                         self.executor.current_action, msg_lines[0],
-                         '\n'.join(msg_lines[1:]))
+            output.exception("Backup failed %s.\nDETAILS: %s\n%s",
+                             self.executor.current_action, msg_lines[0],
+                             '\n'.join(msg_lines[1:]))
 
         else:
             output.info("Backup end at xlog location: %s (%s, %08X)",

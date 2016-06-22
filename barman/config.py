@@ -301,6 +301,7 @@ class ServerConfig(object):
         'retention_policy',
         'retention_policy_mode',
         'reuse_backup',
+        'rsync_workers',
         'ssh_command',
         'streaming_archiver',
         'streaming_archiver_name',
@@ -337,6 +338,7 @@ class ServerConfig(object):
         'retention_policy',
         'retention_policy_mode',
         'reuse_backup',
+        'rsync_workers',
         'streaming_archiver',
         'tablespace_bandwidth_limit',
         'wal_retention_policy'
@@ -360,6 +362,7 @@ class ServerConfig(object):
         'network_compression': 'false',
         'recovery_options': '',
         'retention_policy_mode': 'auto',
+        'rsync_workers': '1',
         'streaming_archiver': 'off',
         'streaming_archiver_name': 'barman_receive_wal',
         'streaming_backup_name': 'barman_streaming_backup',
@@ -387,6 +390,7 @@ class ServerConfig(object):
         'network_compression': parse_boolean,
         'recovery_options': RecoveryOptions,
         'reuse_backup': parse_reuse_backup,
+        'rsync_workers': int,
         'streaming_archiver': parse_boolean,
     }
 
